@@ -17,10 +17,18 @@
 </head>
 <body class="font-sans antialiased  ">
   <nav>
-      <a href="/">Home</a>
-      <a href="/contact">Contact</a>
-      <a href="/about">About Us</a>
-  </nav>
+      <x-nav-link href="/">
+          Home
+      </x-nav-link>
+
+      <x-nav-link href="/contact">
+          Contact Us
+      </x-nav-link>
+
+      <x-nav-link href="/about">
+          About Us
+      </x-nav-link>
+   </nav>
 
 {{ $slot }}
 
