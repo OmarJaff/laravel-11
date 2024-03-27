@@ -2,6 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Comment;
+use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +20,11 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            ''
+            'title' => fake()->word(5),
+            'post' => fake()->paragraph(4),
+            'author_id' => User::factory(),
+            'comment_id' => Comment::factory(),
+            'tag_id'=>Tag::factory(),
         ];
     }
 }

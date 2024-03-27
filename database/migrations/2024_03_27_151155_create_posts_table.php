@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('post');
+            $table->foreignIdFor(\App\Models\User::class, 'author_id');
             $table->foreignIdFor(\App\Models\Comment::class);
             $table->foreignIdFor(\App\Models\Tag::class);
             $table->timestamps();
